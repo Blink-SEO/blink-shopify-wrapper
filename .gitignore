@@ -1,0 +1,13 @@
+node_modules
+config/settings_data.json
+.cache
+.env
+.zip
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+.DS_Store
+.env
+cypress/integration/examples

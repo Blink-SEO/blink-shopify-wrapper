@@ -1,0 +1,11 @@
+development:
+  password:
+  theme_id: ""
+  store: <store>.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+production:
+  password:
+  theme_id: ''
+  store: <store>.myshopify.com
+  timeout: 60s
