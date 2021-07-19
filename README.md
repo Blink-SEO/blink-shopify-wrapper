@@ -1,6 +1,6 @@
 # Blink SEO Shopify developement wrapper - Online Store 1.0
 
-*Only works with Online Store 1.0*
+_Only works with Online Store 1.0_
 
 This is a development wrapper intended for working with Shopify themes, using [Themekit](https://shopify.dev/themes/tools/theme-kit) and browsersync to handle changes.
 
@@ -12,18 +12,6 @@ This includes themekit for local online store 1.0 development.
 
 ```bash
 npm install
-```
-
-Rename the .env.sample, containing the shopify url and with the preview id, to .env and add the route to your localhost ssl key and certificate files (the location may be different for you). These are important for browsersync so it can launch the correct shopify theme. For more info on localhost ssl check out [web.dev](https://web.dev/how-to-use-local-https/).
-
-It should look something like this:
-
-```
-# .env
-
-PROXY_URL=https://store.myshopify.com/?preview_theme_id=122847887543
-SSL_KEY=/etc/ssl/localhost/localhost.key
-SSL_CRT=/etc/ssl/localhost/localhost.crt
 ```
 
 ## Connecting to Shopify
@@ -53,7 +41,7 @@ Your config file should look something like:
 
 development:
   password: [your-theme-kit-passwor]
-  theme_id: "[your-theme-id]"
+  theme_id: '[your-theme-id]'
   store: [your-store.myshopify.com]
   ignore_files:
     - config/settings_data.json
@@ -64,7 +52,19 @@ production:
   timeout: 60s
 ```
 
-*Note: The theme ID will be different for your production settings, refer back to the list of IDs you generated at the start.*
+_Note: The theme ID will be different for your production settings, refer back to the list of IDs you generated at the start._
+
+Rename the .env.sample, containing the shopify url and with the preview id, to .env and add the route to your localhost ssl key and certificate files (the location may be different for you). These are important for browsersync so it can launch the correct shopify theme. For more info on localhost ssl check out [web.dev](https://web.dev/how-to-use-local-https/).
+
+It should look something like this:
+
+```
+# .env
+
+PROXY_URL=https://your-store.myshopify.com.myshopify.com/?preview_theme_id=your-theme-id
+SSL_KEY=/etc/ssl/localhost/localhost.key
+SSL_CRT=/etc/ssl/localhost/localhost.crt
+```
 
 ## Available CLI commands
 
