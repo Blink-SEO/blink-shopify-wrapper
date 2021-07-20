@@ -69,7 +69,7 @@ SSL_CRT=/etc/ssl/localhost/localhost.crt
 ## Available CLI commands
 
 - `npm run develop`: Opens and watches the development theme using browsersync to sync and watch for changes. _Because themekit has to push updated files up to the Shopify server there might be a second delay between your changes and the browser reloading. If your changes aren't immediately obvious try refreshing the browser manually._
-- `npm run build`: Will optimise the css and js files and push the changes up to the production theme set in the `config.yml` file.
+- `npm run publish`: Will optimise the css and js files and push the changes up to the production theme set in the `config.yml` file.
 - `npm run lint`: Will lint the files for formatting errors
 
 ## Links
