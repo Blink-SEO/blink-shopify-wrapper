@@ -1,0 +1,10 @@
+/* ---------------------------------------
+  Prefix your classes with a .blink- prefix
+  e.g. .blink-container {}
+
+  This will help to keep our styles separate
+  and prevent confilcts between us and the
+  main theme stylesheet.
+--------------------------------------- */
+
+/* Custom styles go here... */
