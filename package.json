@@ -1,44 +1,35 @@
 {
   "name": "app",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
-    "watch:theme": "theme watch --env=development",
-    "watch:browsersync": "browser-sync start --config bs-config.js",
-    "lint:liquid": "theme-check; exit 0",
-    "lint:styles": "stylelint \"assets/scss/**/*.scss\" --syntax=scss; exit 0",
-    "lint:scrips": "eslint \"assets/js/**/*.js\" --quiet; exit 0",
-    "publish": "theme deploy --env=production --allow-live --nodelete; exit 0",
-    "develop": "run-p watch:*",
+    "lint:styles": "stylelint \"assets/blink-styles.css\"",
+    "lint:scripts": "eslint \"assets/blink-scripts.js\" --quiet;",
+    "lint:liquid": "shopify theme check",
     "lint": "run-s lint:*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Blink-SEO/furniture-maxi.git"
+    "url": "git+https://github.com/Blink-SEO/blink-shopify-wrapper.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Blink-SEO/furniture-maxi/issues"
+    "url": "https://github.com/Blink-SEO/blink-shopify-wrapper/issues"
   },
-  "homepage": "https://github.com/Blink-SEO/furniture-maxi#readme",
+  "homepage": "https://github.com/Blink-SEO/blink-shopify-wrapper#readme",
   "devDependencies": {
-    "@shopify/themekit": "^1.1.7",
-    "browser-sync": "^2.26.14",
-    "dotenv": "^10.0.0",
-    "eslint": "^7.21.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.1",
-    "stylelint": "^13.12.0",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.3.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-prettier": "^1.2.0",
-    "stylelint-scss": "^3.19.0",
-    "trash": "^7.1.1"
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-prettier": "^2.0.0"
   }
 }
