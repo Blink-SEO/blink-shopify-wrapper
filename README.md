@@ -1,14 +1,16 @@
-# Blink SEO Shopify developement wrapper - Online Store 1.0
+# Blink SEO Shopify developement wrapper
 
-_Only works with Online Store 1.0_
+This is a development wrapper intended for working with Shopify themes, using the [Shopify CLI](https://shopify.dev/themes/tools/cli).
 
-This is a development wrapper intended for working with Shopify themes, using [Themekit](https://shopify.dev/themes/tools/theme-kit) and browsersync to handle changes.
+## Dependencies
 
+To work with Shopify stores using this wrapper make sure to have the following installed
+
+- [Shopify CLI](https://shopify.dev/themes/tools/cli/getting-started)
+- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 ## Getting Started
 
 Start by running npm install to set up the development dependencies you'll need.
-
-This includes themekit for local online store 1.0 development.
 
 ```bash
 npm install
@@ -16,64 +18,62 @@ npm install
 
 ## Connecting to Shopify
 
-You will need to make sure you have a themekit password set up before you start here. There are steps in the [Shopify dev docs](https://shopify.dev/themes/tools/theme-kit/access) with info on how to generate this.
+### Whoami
 
-Once you have your password generated run the following command to list out all of the themes available in the store you're working on.
-
-```bash
-theme get --list --password=[your-theme-kit-password] --store="[your-store.myshopify.com]"
-```
-
-Find the theme ID you want to use for development then run
+It's generally a good idea to check who you are logged in as before you start any work.
 
 ```bash
-theme get --password=[your-theme-kit-password] --store="[your-store.myshopify.com]" --themeid=[your-theme-id]
+shopify whoami
 ```
 
-This will retreive the theme files as well as generate a simple config.yml file.
+Will output the store you are currently logged into and who you are logged in as. The output might look something like:
 
-Navigate to you config.yml file and add the `ignore_files` line and production section as per the example below.
-
-Your config file should look something like:
-
-```yml
-# config.yml
-
-development:
-  password: [your-theme-kit-passwor]
-  theme_id: '[your-theme-id]'
-  store: [your-store.myshopify.com]
-  ignore_files:
-    - config/settings_data.json
-production:
-  password: [your-theme-kit-passwor]
-  theme_id: '[your-live-theme-id]'
-  store: [your-store.myshopify.com]
-  timeout: 60s
+```bash
+Logged into store blink-developer.myshopify.com in partner organization Blink
 ```
 
-_Note: The theme ID will be different for your production settings, refer back to the list of IDs you generated at the start._
+### Log into a store
 
-Rename the .env.sample, containing the shopify url and with the preview id, to .env and add the route to your localhost ssl key and certificate files (the location may be different for you). These are important for browsersync so it can launch the correct shopify theme. For more info on localhost ssl check out [web.dev](https://web.dev/how-to-use-local-https/).
+Log into the store you want to work on with the `shopify login --store <SUBDOMAIN>.myshopify.com` command. Where the subdomain is the subdomain name of your store e.g.
 
-It should look something like this:
-
-```
-# .env
-
-PROXY_URL=https://your-store.myshopify.com.myshopify.com/?preview_theme_id=your-theme-id
-SSL_KEY=/etc/ssl/localhost/localhost.key
-SSL_CRT=/etc/ssl/localhost/localhost.crt
+```bash
+shopify login --store blink-developer.myshopify.com
 ```
 
-## Available CLI commands
+This will take you to an auth page in your browser. Use that to log into your account.
 
-- `npm run develop`: Opens and watches the development theme using browsersync to sync and watch for changes. _Because themekit has to push updated files up to the Shopify server there might be a second delay between your changes and the browser reloading. If your changes aren't immediately obvious try refreshing the browser manually._
-- `npm run publish`: Will optimise the css and js files and push the changes up to the production theme set in the `config.yml` file.
-- `npm run lint`: Will lint the files for formatting errors
+## Downloading a theme and working locally
+
+Download an existing theme to your local machine using:
+
+```bash
+shopify theme pull
+```
+
+This will list out the themes currently on the store. Use your terminal to select the one you want to work on.
+
+Once your theme has downloaded you can run:
+
+```bash
+shopify theme serve
+```
+
+to generate the following:
+
+- A link to your development theme at http://127.0.0.1:9292. This URL can hot reload local changes to CSS and sections, or refresh the entire page when a file changes, allowing you to preview changes in real time using the store's data.
+- A link to the online store editor for the theme.
+- A preview link that you can share with other developers.
+
+## Pushing your changes
+
+Upload your local theme files to Shopify, overwriting the remote theme if specified.
+
+```bash
+shopify theme push
+```
+
 
 ## Links
-
+- [Shopify CLI theme commands](https://shopify.dev/themes/tools/cli/theme-commands)
 - [component-based Liquid examples](https://shopify.github.io/liquid-code-examples/?shpxid=12a8706a-5F35-438E-0984-5DFF92F45F89)
-- [Liquid reference](https://shopify.dev/docs/themes/liquid/reference)
-- [Config reference](https://shopify.dev/tools/theme-kit/configuration-reference)
+- [Liquid reference](https://shopify.dev/api/liquid)
