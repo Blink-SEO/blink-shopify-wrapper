@@ -4,6 +4,9 @@
   "description": "",
   "main": "",
   "scripts": {
+    "pull": "shopify theme pull --nodelete",
+    "push": "shopify theme push --nodelete",
+    "watch": "shopify theme serve",
     "lint:styles": "stylelint \"assets/blink-styles.css\"",
     "lint:scripts": "eslint \"assets/blink-scripts.js\" --quiet;",
     "lint:liquid": "shopify theme check",

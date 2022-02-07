@@ -46,7 +46,7 @@ This will take you to an auth page in your browser. Use that to log into your ac
 Download an existing theme to your local machine using:
 
 ```bash
-shopify theme pull --nodelete
+npm run pull
 ```
 
 This will list out the themes currently on the store. Use your terminal to select the one you want to work on.
@@ -54,7 +54,7 @@ This will list out the themes currently on the store. Use your terminal to selec
 Once your theme has downloaded you can run:
 
 ```bash
-shopify theme serve
+npm run watch
 ```
 
 to generate the following:
@@ -68,7 +68,7 @@ to generate the following:
 Upload your local theme files to Shopify, overwriting the remote theme if specified.
 
 ```bash
-shopify theme push
+npm run push
 ```
 
 ## File structure
