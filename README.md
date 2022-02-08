@@ -2,7 +2,7 @@
 
 This is a development wrapper intended for working with Shopify themes, using the [Shopify CLI](https://shopify.dev/themes/tools/cli).
 
-## Dependencies
+## Dependencies
 
 To work with Shopify stores using this wrapper make sure to have the following installed
 
