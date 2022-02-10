@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "shopify.theme-check-vscode",
+    "killalau.vscode-liquid-snippets",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
