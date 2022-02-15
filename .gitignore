@@ -3,6 +3,7 @@ config/settings_data.json
 config/settings_schema.json
 .cache
 .zip
+.env
 
 # ignore log files and databases
 *.log
