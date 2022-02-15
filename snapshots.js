@@ -7,7 +7,7 @@
  * see https://docs.percy.io/docs/cli-snapshot#usage for examples.
  */
 const snapshotConfig = {
-  store: 'https://blink-developer.myshopify.com', // Update this to the store you are working on
+  site: 'https://blink-developer.myshopify.com', // Update this to the store you are working on
   previewID: 125258629288, // Update this to the theme ID you are working on
   devMode: false,
   pages: [
@@ -28,22 +28,22 @@ const snapshotConfig = {
  * @link https://docs.percy.io/docs/cli-snapshot
  */
 const createSnapshotUrls = (config) => {
-  const store = config.store || '';
+  const site = config.site || '';
   const previewID = config.previewID
     ? `?preview_theme_id=${config.previewID}`
     : '';
 
   // Attempt to warn user that they haven't changed the default settings
-  if (config.devMode === false && store.includes('blink-developer')) {
+  if (config.devMode === false && site.includes('blink-developer')) {
     console.warn(
-      'It looks like you are trying to run this on the blink-development store. Make sure to change your .env file to update the url. \nAlternatively change snapshotConfig.devMode to true.',
+      'It looks like you are trying to run this on the blink-development site. Make sure to change your .env file to update the url. \nAlternatively change snapshotConfig.devMode to true.',
     );
     return;
   }
 
   return config.pages.map((page) => ({
     name: page.name || page.url,
-    url: `${store}${page.url}${previewID}`,
+    url: `${site}${page.url}${previewID}`,
   }));
 };
 
