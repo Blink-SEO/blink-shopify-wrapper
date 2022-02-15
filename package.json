@@ -11,7 +11,7 @@
     "lint:scripts": "eslint \"assets/blink-scripts.js\" --quiet;",
     "lint:liquid": "shopify theme check",
     "lint": "run-s lint:*",
-    "snapshot": "npx @percy/cli@latest snapshot snapshots.js --dry-run"
+    "snapshot": "npx @percy/cli@latest snapshot snapshots.js"
   },
   "repository": {
     "type": "git",
