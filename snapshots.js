@@ -44,6 +44,7 @@ const createSnapshotUrls = (config) => {
   return config.pages.map((page) => ({
     name: page.name || page.url,
     url: `${site}${page.url}${previewID}`,
+    additionalSnapshots: page?.additionalSnapshots,
   }));
 };
 
